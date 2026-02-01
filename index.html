@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاري التحقق من الأمان</title>
+    <style>
+        /* تصميم عصري ومريح للعين */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            text-align: center;
+            padding: 2rem;
+            background: #1e293b;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #38bdf8;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h2 { margin-bottom: 0.5rem; font-size: 1.5rem; }
+        p { color: #94a3b8; font-size: 0.9rem; }
+
+        .progress-bar {
+            width: 100%;
+            background: #334155;
+            height: 6px;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: #38bdf8;
+            height: 100%;
+            width: 0%;
+            animation: load 3s forwards;
+        }
+
+        @keyframes load {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+    <script>
+        // التحويل التلقائي بعد انتهاء الـ Animation (3 ثواني)
+        setTimeout(function(){
+            window.location.href = "{{ target_url }}";
+        }, 3500);
+    </script>
+</head>
+<body>
+
+    <div class="card">
+        <div class="spinner"></div>
+        <h2>جاري فحص الرابط...</h2>
+        <p>نحن نتأكد من أن الرابط آمن ومشفر تماماً قبل توجيهك.</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+</body>
+</html>
